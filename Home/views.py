@@ -77,9 +77,9 @@ def Home(req):
                 page = "user.html"
                 visible = "false"
                 for d in data:
-                    if len(d.get("likes")) > 0:
+                    if len(d.get("likes")) > 0:  # type: ignore
                         likess = d.get("likes")
-                        likess = likess.split(",")
+                        likess = likess.split(",")# type: ignore
                         add = False
                         for l in likess:
                             if l == value :
@@ -98,7 +98,7 @@ def Home(req):
                     
             for d in data:
                 xt = d.get('text')
-                xt = xt.replace("\n","<br>")
+                xt = xt.replace("\n","<br>")# type: ignore
                 d.update({'text' : xt})
                 print(d)
             return render(req, page, {'Title': title, 'state': req.session['email'], 'log': "logout", 'email': req.session['email'], 'data': data, 'len': (Len+1), 'visible': visible})
