@@ -145,7 +145,7 @@ def Home(req):
             email = req.POST.get('email', None)
             New = req.POST.get('New', None)
             privacy = req.POST.get('privacy', None)
-
+        
             # print(txt, id, email, New, privacy)
 
             if New == "true":
