@@ -105,7 +105,7 @@ def Home(req):
         else:
             da = text.objects.filter(privacy=0).order_by("-likesCount").values()
             data=da
-            c=0
+            # c=0
             # for d in data:
             #     data.append(d)
             #     if c==4 :
@@ -168,7 +168,7 @@ def Home(req):
 def logout(req):
     if 'email' in req.session.keys():
         del req.session['email']
-        return redirect('/home')
+        return redirect('/')
 
 
 # def getData(req):
