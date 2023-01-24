@@ -13,8 +13,8 @@
             <input type="checkbox" name="privacy" class="privacy" value="0">
             {% endif %}
             <span class="slider"></span>
-            <button type="submit" class="del">Delete</button>
         </label>
+        <button type="button" class="del" onclick="del()">Delete</button>
         {% endif %}
         {% if visible == "false" %}
         <div class="heart-cont">
@@ -36,6 +36,13 @@
     </div>
 </div>
 {% endfor %}
+
+<script>
+    function del(evt)
+    {
+        console.log(evt)
+    }
+</script>
 {% if visible == "false" %}
 <style>
     .heart {
