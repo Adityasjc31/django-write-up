@@ -175,6 +175,7 @@ def delete(req):
     print("In delete method")
     id = req.POST.get('id')
     email = id[0:id.index("_")]
+    print("Id going to be deleted : "+id)
     Txt = text.objects.get(email=email, id=id)
     Txt.delete()
     return HttpResponse("Deleted")

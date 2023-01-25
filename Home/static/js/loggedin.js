@@ -162,6 +162,8 @@ function openDialog(txt, val = "1") {
 
     })
 }
+
+
 function createNewpost(txt) {
     if (txt.length > 0) {
         content = document.getElementsByClassName("content-Handler")
@@ -215,6 +217,13 @@ function createNewpost(txt) {
             text = newcontenHolder.children[0].innerText
             openDialog(text)
         })*/
+
+        newdeletebutton = document.createElement('button')
+        newdeletebutton.setAttribute("class","del");
+        newdeletebutton.setAttribute("onclick","del(this)");
+        newdeletebutton.innerHTML = "Delete"
+        newdeletebutton.setAttribute("id","del$"+email + "_" + (len-1));
+        newopts.appendChild(newdeletebutton)
 
         for (let x = 0; x < content.length; x++) {
             content[x].append(newcontenHolder)
