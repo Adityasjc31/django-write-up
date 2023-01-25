@@ -14,6 +14,7 @@
             {% endif %}
             <span class="slider"></span>
         </label>
+        <button type="button" class="del" id="del${{d.id}}" onclick="del(this)">Delete</button>
         {% endif %}
         {% if visible == "false" %}
         <div class="heart-cont">
@@ -35,6 +36,27 @@
     </div>
 </div>
 {% endfor %}
+
+<script>
+    let e;
+    function del(evt)
+    {
+        e=evt;
+        //console.log(evt)
+        evt.parentElement.parentElement.remove();
+        id = evt.id.substring(4);
+        var jqxhr = $.ajax({
+            type: "POST",
+            url: "./delete",
+            dataType: document.contentType,
+            async: true,
+            data: {
+                csrfmiddlewaretoken: '{{ csrf_token }}',
+                id : id
+            },
+        });
+    }
+</script>
 {% if visible == "false" %}
 <style>
     .heart {

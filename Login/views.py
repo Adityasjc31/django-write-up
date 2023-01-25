@@ -17,7 +17,7 @@ def logIn(req):
             user = User.objects.get(email=req.POST['email'])
             if user.password == req.POST['password']:
                 req.session['email'] = req.POST['email']
-                return redirect('/home')
+                return redirect('/')
             else:
                 form = LoginForm(req.POST)
                 return render(req, "Login.html", {'Title': "Login", 'frm': form, 'msg': "Wrong Password", 'posL': "27%"})

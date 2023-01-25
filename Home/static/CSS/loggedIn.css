@@ -159,6 +159,10 @@
     cursor: pointer;
     animation: fadein 100ms forwards linear;
 }
+.opts:hover .del {
+    cursor: pointer;
+    animation: fadein 100ms forwards linear;
+}
 
 .switch {
     cursor: pointer;
@@ -523,4 +527,29 @@
 
 ::-webkit-scrollbar-thumb:hover ::-webkit-scrollbar {
     width: 15px;
+}
+
+.del
+{
+    position: relative;
+    left: 45%;
+    top: -4%;
+    opacity: 0;
+    outline: none;
+    background: transparent;
+    border: 0;
+    color: #ff0808;
+    padding: 5px 8px 4px 8px;
+}
+
+.del:hover
+{
+    background: #270f0f;
+    padding: 5px 8px 4px 8px;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.del:active
+{
+    background: #6f2020;
 }
