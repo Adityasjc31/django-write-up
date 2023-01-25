@@ -3,6 +3,8 @@ from Home.views import *
 
 urlpatterns = [
     path('',Home,name="home"),
+    path('home',Home,name="home"),
+    path('delete',delete,name="delete"),# type: ignore    
     path('logout',logout,name="logout"),  # type: ignore
     # path('img',ImgUploadTest,name="img"),
     # path('dHd',dataHelpDisplay,name="dHd"),

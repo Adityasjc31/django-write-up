@@ -171,6 +171,14 @@ def logout(req):
         return redirect('/')
 
 
+def delete(req):
+    print("In delete method")
+    id = req.POST.get('id')
+    email = id[0:id.index("_")]
+    Txt = text.objects.get(email=email, id=id)
+    Txt.delete()
+    return HttpResponse("Deleted")
+
 # def getData(req):
 #     if req.method == 'GET':
 #         return HttpResponse("Hi")
