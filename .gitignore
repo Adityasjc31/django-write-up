@@ -1,5 +1,5 @@
 db.sqlite3
 Home/__pycache__/
 Login/__pycache__/
-.vscode/
+.vscode
 Procfile
