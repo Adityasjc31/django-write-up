@@ -140,5 +140,5 @@ EMAIL_HOST_PASSWORD = "wzhyikulaislzjnf"
 MEDIA_ROOT = os.path.join(BASE_DIR,'profiles')
 MEDIA_URL = '/profiles/'
 
-# STATICFILES_DIRS = os.path.join(BASE_DIR,'static'),
-# STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles_build','static')
+STATICFILES_DIRS = os.path.join(BASE_DIR,'static'),
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles_build','static')
