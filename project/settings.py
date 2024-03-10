@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 import os
 from pathlib import Path
-# import dj_database_url
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-guh6=49+7&b&9nx3w&32$6o)y$dmf3rhy70&*1$v%bu+6-!_a#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app','.now.sh']
+ALLOWED_HOSTS = ['.vercel.app','.now.sh','*']
 
 
 # Application definition
@@ -85,7 +85,7 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
+# DATABASES['default'] = dj_database_url.config() # type: ignore
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -140,5 +140,5 @@ EMAIL_HOST_PASSWORD = "wzhyikulaislzjnf"
 MEDIA_ROOT = os.path.join(BASE_DIR,'profiles')
 MEDIA_URL = '/profiles/'
 
-STATICFILES_DIRS = os.path.join(BASE_DIR,'static'),
-STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles_build','static')
+# STATICFILES_DIRS = os.path.join(BASE_DIR,'static'),
+# STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles_build','static')
